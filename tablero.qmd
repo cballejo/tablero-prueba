@@ -13,7 +13,7 @@ library(tidyverse)
 ```
 
 ```{r}
-urlfile <- "https://raw.githubusercontent.com/cballejo/tablero-prueba/main/data/ejemplo.csv"
+urlfile <- "https://raw.githubusercontent.com/cballejo/datos-dinamicos/main/ejemplo.csv"
 datos <- read_csv2(url(urlfile))
                    
 knitr::kable(datos)                   

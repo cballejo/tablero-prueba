@@ -1,0 +1,20 @@
+---
+title: "Tablero"
+format: 
+  dashboard: 
+    scrolling: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+```
+
+```{r}
+urlfile <- "https://raw.githubusercontent.com/cballejo/tablero-prueba/main/data/ejemplo.csv"
+datos <- read_csv2(url(urlfile))
+                   
+knitr::kable(datos)                   
+```

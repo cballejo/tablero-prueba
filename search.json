@@ -2,11 +2,11 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Descripción",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2",
+    "text": "Acerca de este tablero\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "Acerca de"
+      "Acerca"
     ]
   },
   {
@@ -14,7 +14,7 @@
     "href": "index.html",
     "title": "tablero-prueba",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2",
+    "text": "Este es una tablero de prueba\n\n1 + 1\n\n[1] 2",
     "crumbs": [
       "Home"
     ]

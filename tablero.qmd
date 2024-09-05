@@ -14,7 +14,7 @@ library(tidyverse)
 
 ```{r}
 urlfile <- "https://github.com/cballejo/datos-dinamicos/raw/main/datos.rds"
-datos <- load(file = url(urlfile))
+datos <- readRDS(file = url(urlfile))
                    
-knitr::kable(datos)                   
+knitr::kable(datos)                  
 ```

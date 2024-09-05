@@ -13,8 +13,8 @@ library(tidyverse)
 ```
 
 ```{r}
-urlfile <- "http://datos.salud.gob.ar/dataset/c553d917-36f4-4063-ac02-1686a9120e1c/resource/f4096f8b-1692-4d5f-a6d8-09cae47931a4/download/vigilancia-respiratorias-agudas-2018-hasta-20200106.csv"
-datos <- read_csv2(url(urlfile))
+urlfile <- "https://github.com/cballejo/datos-dinamicos/raw/main/datos.rds"
+datos <- load(file = url(urlfile))
                    
 knitr::kable(datos)                   
 ```

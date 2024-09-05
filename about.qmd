@@ -1,8 +1,8 @@
 ---
-title: "About"
+title: "Descripción"
 ---
 
-About this site
+Acerca de este tablero
 
 ```{r}
 1 + 1

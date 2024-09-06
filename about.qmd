@@ -1,9 +1,0 @@
----
-title: "Descripción"
----
-
-Acerca de este tablero
-
-```{r}
-1 + 1
-```

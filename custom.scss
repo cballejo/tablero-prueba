@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+
+$font-size-base: 0.8rem;
+
+/*-- scss:rules --*/
+
+
+.quarto-dashboard .bslib-value-box .value-box-title {
+    font-size: clamp(0.8rem, 0.7rem, 1rem);
+}
+
+.quarto-dashboard .bslib-value-box .value-box-value {
+    font-size: clamp(1.2rem, 0.7rem, 1rem);
+}
+
+.bslib-value-box .bi {
+  font-size: 1.8rem !important; 
+}
+

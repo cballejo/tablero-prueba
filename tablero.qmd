@@ -1,8 +1,20 @@
 ---
-title: "Tablero"
+title: "Dengue Argentina - 2023/2024"
 format: 
   dashboard: 
+    logo: "images/logo.png"
     scrolling: false
+    orientation: columns
+    nav-buttons: 
+      - icon: building
+        href: https://www.ine.gov.ar
+        target: _blank
+      - icon: twitter
+        href: https://x.com/chrisballejo
+        target: _blank
+      - icon: linkedin
+        href: https://www.linkedin.com/in/cballejo/
+        target: _blank    
 ---
 
 ```{r}
@@ -10,11 +22,132 @@ format:
 #| include: false
 
 library(tidyverse)
+library(plotly)
+library(reactable)
+library(reactablefmtr)
+library(htmltools)
+
+urlfile <- "https://github.com/cballejo/datos-dinamicos/raw/main/datos.RData"
+
+datos <- load(file = url(urlfile))
+```
+
+# Valores / tabla
+
+## Column {width="35%"}
+
+```{r}
+#| content: valuebox 
+#| title: "Provincia con mayor variación" 
+ 
+list(
+  icon = "person",
+  color = "blue",
+  value = var_mayor
+)
 ```
 
 ```{r}
-urlfile <- "https://github.com/cballejo/datos-dinamicos/raw/main/datos.rds"
-datos <- readRDS(file = url(urlfile))
-                   
-knitr::kable(datos)                  
+#| content: valuebox 
+#| title: "Provincia con menor variación" 
+ 
+list(
+  icon = "person",
+  color = "yellow",
+  value = var_menor
+)
 ```
+
+## Column {width="65%"}
+
+```{r}
+
+tasas_crudas <- tasas_crudas |> 
+  rename("Año" = anio_min,
+         "Provincia" = provincia_residencia,
+         "Población" = poblacion,
+         "Tasa (x 100000 hab.)" = Tasa)
+
+selectFilter <- function(tableId, style = "width: 100%; height: 100%;") {
+  function(values, name) {
+    tags$select(
+      # Set to undefined to clear the filter
+      onchange = sprintf("
+        const value = event.target.value
+        Reactable.setFilter('%s', '%s', value === '__Ambos__' ? undefined : value)
+      ", tableId, name),
+      # "All" has a special value to clear the filter, and is the default option
+      tags$option(value = "__Ambos__", "Ambos"),
+      lapply(unique(values), tags$option),
+      "aria-label" = sprintf("Filter %s", name),
+      style = style
+    )
+  }
+}
+# Min range filter input that handles NaNs
+minRangeFilter <- function(tableId, style = "width: 100%;") {
+  function(values, name) {
+    values <- na.omit(values)
+    oninput <- sprintf("Reactable.setFilter('%s', '%s', this.value)", tableId, name)
+    tags$input(
+      type = "range",
+      min = floor(min(values)),
+      max = ceiling(max(values)),
+      value = floor(min(values)),
+      oninput = oninput,
+      style = style,
+      "aria-label" = sprintf("Filtro por minimo %s", name)
+    )
+  }
+}
+
+# Min value filter method that handles NaNs
+filterMinValue <- JS("(rows, columnId, filterValue) => {
+  return rows.filter(row => {
+    const value = row.values[columnId]
+    return !isNaN(value) && value >= filterValue
+  })
+}")
+
+reactable(
+  tasas_crudas,
+  columns = list(
+     `Año` = colDef(
+      filterInput = selectFilter("tbl-input")
+    ),
+    Casos = colDef(
+      filterMethod = filterMinValue,
+      filterInput = minRangeFilter("tbl-input")
+    ),
+    `Población` = colDef(filterable = FALSE),
+    `Tasa (x 100000 hab.)` = colDef(
+      filterMethod = filterMinValue,
+      filterInput = minRangeFilter("tbl-input")
+    )
+  ),
+  filterable = TRUE,
+  wrap = FALSE,
+  resizable = TRUE,
+  defaultPageSize = 8,
+  striped = T,
+  minRows = 5,
+  elementId = "tbl-input", 
+  theme = flatly(font_size = 20, header_font_size = 20),
+    language = reactableLang(
+    noData = "No hay datos",
+    pageInfo = "{rowStart}\u2013{rowEnd} de {rows} filas",
+    pagePrevious = "\u276e",
+    pageNext = "\u276f",
+    pagePreviousLabel = "Previo",
+    pageNextLabel = "Siguiente"
+  )
+)
+```
+
+
+# Gráfico
+
+```{r}
+
+```
+

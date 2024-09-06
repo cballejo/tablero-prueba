@@ -1,10 +1,7 @@
 ---
-title: "tablero-prueba"
+title: "Descripción"
 ---
 
-Este es una tablero de prueba
+Este es una tablero de prueba sobre dengue alojado en **GitHub** que utiliza un workflows de **Actions** para renderizarse automáticamente los días lunes a las 8 hs (hora de Argentina) leyendo datos dinámicos de un repositorio GitHub.
 
-
-```{r}
-1 + 1
-```
+El repositorio de datos dinámicos también se actualiza periodicamente a partir de archivos de datos publicos sobre **casos de dengue provenientes del Sistema Nacional de Vigilancia de la Salud (SNVS v2-SISA) del Ministerio de Salud de la Nación Argentina**.

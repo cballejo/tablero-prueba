@@ -1,20 +1,10 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Descripción",
-    "section": "",
-    "text": "Acerca de este tablero\n\n1 + 1\n\n[1] 2",
-    "crumbs": [
-      "Acerca"
-    ]
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "tablero-prueba",
+    "title": "Descripción",
     "section": "",
-    "text": "Este es una tablero de prueba\n\n1 + 1\n\n[1] 2",
+    "text": "Este es una tablero de prueba sobre dengue alojado en GitHub que utiliza un workflows de Actions para renderizarse automáticamente los días lunes a las 8 hs (hora de Argentina) leyendo datos dinámicos de un repositorio GitHub.\nEl repositorio de datos dinámicos también se actualiza periodicamente a partir de archivos de datos publicos sobre casos de dengue provenientes del Sistema Nacional de Vigilancia de la Salud (SNVS v2-SISA) del Ministerio de Salud de la Nación Argentina.",
     "crumbs": [
       "Home"
     ]

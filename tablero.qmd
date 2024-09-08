@@ -34,31 +34,31 @@ datos <- load(file = url(urlfile))
 
 # Valores / tabla
 
-## Column {width="35%"}
+## Column {width="30%"}
 
 ```{r}
 #| content: valuebox 
-#| title: "Provincia con mayor variación" 
+#| title: "Mayor variación en tasa 2023-2024 (veces)" 
  
 list(
-  icon = "person",
-  color = "blue",
+  icon = "arrow-up-circle-fill",
+  color = "danger",
   value = var_mayor
 )
 ```
 
 ```{r}
 #| content: valuebox 
-#| title: "Provincia con menor variación" 
+#| title: "Menor variación en tasa 2023-2024 (veces)" 
  
 list(
-  icon = "person",
-  color = "yellow",
+  icon = "arrow-down-circle-fill",
+  color = "success",
   value = var_menor
 )
 ```
 
-## Column {width="65%"}
+## Column {width="70%"}
 
 ```{r}
 
@@ -132,7 +132,7 @@ reactable(
   striped = T,
   minRows = 5,
   elementId = "tbl-input", 
-  theme = flatly(font_size = 20, header_font_size = 20),
+  theme = lux(font_size = 16, header_font_size = 18, header_font_color = "lightpink"),
     language = reactableLang(
     noData = "No hay datos",
     pageInfo = "{rowStart}\u2013{rowEnd} de {rows} filas",
@@ -148,6 +148,11 @@ reactable(
 # Gráfico
 
 ```{r}
-
+ggplotly(graf1, 
+         width = 900, 
+         height = 350,
+         tooltip = c("y", "x", "Año")) |> 
+  layout(title = "Tendencia casos de dengue por SE - Argentina - 2023/2024",
+         legend = list(x = 0.8, y = 0.9))
 ```
 

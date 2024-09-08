@@ -1,19 +1,24 @@
 /*-- scss:defaults --*/
 
-$font-size-base: 0.8rem;
+$font-size-base: 1rem;
+
+$danger: #f553a1 !default;
+$valuebox-bg-danger: #f553a1 !default;
+
+$success: #55d999 !default;
+$valuebox-bg-success: #55d999 !default;
 
 /*-- scss:rules --*/
 
-
 .quarto-dashboard .bslib-value-box .value-box-title {
-    font-size: clamp(0.8rem, 0.7rem, 1rem);
+    font-size: clamp(0.6rem, 0.8rem, 1rem);
 }
 
 .quarto-dashboard .bslib-value-box .value-box-value {
-    font-size: clamp(1.2rem, 0.7rem, 1rem);
+    font-size: clamp(1rem, 1.2rem, 1.4rem);
 }
 
 .bslib-value-box .bi {
-  font-size: 1.8rem !important; 
+  font-size: 3rem !important; 
 }
 

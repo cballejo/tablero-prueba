@@ -1,7 +1,10 @@
----
-title: "Descripción"
----
+## Descripción
 
 Este es una tablero de prueba sobre dengue alojado en **GitHub** que utiliza un workflows de **Actions** para renderizarse automáticamente los días lunes a las 8 hs (hora de Argentina) leyendo datos dinámicos de un repositorio GitHub.
 
+La tabla se realizó utilizando el htmlwidget **reactable** y el gráfico con **plotly**.
+
 El repositorio de datos dinámicos también se actualiza periodicamente a partir de archivos de datos publicos sobre **casos de dengue provenientes del Sistema Nacional de Vigilancia de la Salud (SNVS v2-SISA) del Ministerio de Salud de la Nación Argentina**.
+
+Enlaces a los respectivos repositorios: [Tablero prueba](https://github.com/cballejo/tablero-prueba) - [Datos dinámicos](https://github.com/cballejo/datos-dinamicos)
+

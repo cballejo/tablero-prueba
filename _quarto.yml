@@ -19,9 +19,9 @@ website:
 
 format:
   html:
-    theme: [cosmo, custom.scss]
+    theme: [pulse, custom.scss]
     highlight-style: atom-one-dark
-    toc: true
+    toc: false
     grid:
       sidebar-width: 150px
 

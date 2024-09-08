@@ -9,7 +9,6 @@ website:
   repo-url: https://github.com/cballejo/tablero-prueba
   sidebar:
     style: "docked"
-    search: true
     collapse-level: 1
     contents: 
       - href: index.qmd
@@ -21,7 +20,7 @@ format:
   html:
     theme: [pulse, custom.scss]
     highlight-style: atom-one-dark
-    toc: false
+    toc: true
     grid:
       sidebar-width: 150px
 

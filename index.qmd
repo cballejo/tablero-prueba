@@ -1,6 +1,10 @@
+---
+toc: false
+---
+
 ## Descripción
 
-Este es una tablero de prueba sobre dengue alojado en **GitHub** que utiliza un workflows de **Actions** para renderizarse automáticamente los días lunes a las 8 hs (hora de Argentina) leyendo datos dinámicos de un repositorio GitHub.
+Este es una tablero de prueba sobre dengue alojado en **GitHub** que utiliza un workflows de **Actions** para renderizarse automáticamente los días lunes a las 10 hs (hora de Argentina) leyendo datos dinámicos de un repositorio GitHub.
 
 La tabla se realizó utilizando el htmlwidget **reactable** y el gráfico con **plotly**.
 
